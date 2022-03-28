@@ -4,19 +4,22 @@
     box-sizing: border-box;
 }
 
-body, html {
+html, body {
     height: 100%;
     width: 100%;
 }
 
 body {
-    background-color: black;
-    color: white;
-    font-size: 24px;
-    font-family: sans-serif;
+    background-color: $color-primary;
 }
 
-a {
-    color: palevioletred;
-    text-decoration: double;
+#content {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 16.8rem;
+}
+
+main {
+    height: 100%;
+    width: 100%;
 }

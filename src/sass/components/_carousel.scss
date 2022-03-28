@@ -1,0 +1,49 @@
+//hero slide
+
+.line {
+    position: relative;
+    height: .1rem;
+    width: 100%;
+    background-color: $color-octonary;
+    margin: 0rem 2rem;
+
+    &--1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 33.3%;
+        height: .3rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &--2 {
+        position: absolute;
+        left: 33.3%;
+        top: 0;
+        width: 33.3%;
+        height: .3rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &--3 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 33.3%;
+        height: .3rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    & .dragg {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        height: .3rem;
+        width: 33.3%;
+        background-color: $color-tertiary;
+    } 
+}

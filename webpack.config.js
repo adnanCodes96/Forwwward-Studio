@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -13,7 +14,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
-        assetModuleFilename: '[name][text]',
+        assetModuleFilename: '[name][contenthash].[ext]',
         clean: true
     },
 
@@ -48,12 +49,20 @@ module.exports = {
     },
 
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'styles.css'
+        }),
+
+        new FaviconsWebpackPlugin({
+            logo: './src/images/logo.png',
+            mode: 'webapp',
+            manifest: './src/manifest.json'
+        }),
 
         new HtmlWebpackPlugin({
             title: 'Forwwward Studio - Digital Product Studio',
             filename: 'index.html',
-            template: path.resolve(__dirname, 'src/index.html')
+            template: path.resolve(__dirname, 'src/index.html'),
         }),
         new HtmlWebpackPlugin({
             title: 'Forwwward Studio - Work',

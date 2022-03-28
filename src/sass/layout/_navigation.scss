@@ -1,0 +1,17 @@
+.menu {
+    width: 3rem;
+
+    &__line {
+        background-color: $color-tertiary;
+        height: .2rem;
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.nav {
+    display: none;
+}

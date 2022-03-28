@@ -1,0 +1,37 @@
+.button {
+    &__container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+
+    & .circle {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        border: .1rem solid $color-primary;
+        margin-left: 2rem;
+        position: relative;
+
+        & svg {
+            width: 40%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.cta {
+    height: 12.5rem;
+    width: 12.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary;
+}

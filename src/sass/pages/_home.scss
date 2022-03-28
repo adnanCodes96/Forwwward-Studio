@@ -1,0 +1,55 @@
+.hero {
+    height: 100%;
+    width: 100%;
+
+    &__slider {
+        position: relative;
+        height: 100%;
+
+        & .hero__slide--1,
+        & .hero__slide--2,
+        & .hero__slide--3 {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+    }
+    }
+}
+
+.digital-product-studio {
+    padding: 5rem 0rem;
+}
+
+.card {
+    background-color: $color-tertiary;
+    padding: 3rem;
+
+    &__img {
+        display: inline-block;
+        height: 18.5rem;
+        width: 100%;
+        margin-bottom: 3rem;
+        
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    & p {
+        padding: 1.3rem 0;
+    }
+}
+
+.remarkable-experiences {
+    padding: 5rem 0;
+}
+
+.product-idea {
+    padding: 5rem 0rem;
+}
+
+.decentarlized-studio {
+    padding: 5rem 0rem;
+}
