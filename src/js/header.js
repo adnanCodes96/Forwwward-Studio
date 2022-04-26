@@ -1,6 +1,4 @@
 function insertHeader() {
-    const content = document.getElementById('content');
-
     const header = `
         <header class="header">
             <div class="grid">
@@ -43,7 +41,7 @@ function insertHeader() {
                 </div>
         </nav>
     </header>`;
-    content.insertAdjacentHTML('afterbegin', header);
+    document.body.insertAdjacentHTML('afterbegin', header);
 };
 
 export default insertHeader;

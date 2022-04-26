@@ -110,6 +110,11 @@ a {
             color: $color-tertiary !important;
             text-transform: capitalize;
         }
+
+        &--white {
+            @extend .text--secondary;
+            color: $color-tertiary;
+        }
     }
 
     &--tertiary {
@@ -122,6 +127,12 @@ a {
         color: $color-quinary;
         font-size: 1.6rem;
         line-height: 2.2rem;
+    }
+
+    &--quinary {
+        color: $color-secondary;
+        font-size: 1.5rem;
+        line-height: 2rem;
     }
 }
 
@@ -138,10 +149,44 @@ ul {
     font-size: 1.6rem;
     color: $color-secondary;
     text-align: center;
+
+    &--light {
+        @extend .cta;
+        color: $color-primary;
+    }
+
+    &--underline {
+        color: $color-secondary;
+        font-size: 1.5rem;
+        line-height: 3.3rem;
+    }
 }
 
 .email {
     color: $color-tertiary;
     font-size: 1.3rem;
     line-height: 1.8rem;
+}
+
+.what-we-do {
+    & ul {
+        & li {
+            font-size: 1.3rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.centered-slider {
+    &__item {
+        & .heading {
+            margin-top: 2.6rem;
+        }
+    }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    color: $color-secondary;
 }

@@ -24,7 +24,7 @@ function insertFooter(){
         </footer>
     `;
 
-    content.insertAdjacentHTML('beforeend', footer);
+    content.insertAdjacentHTML('afterend', footer);
 
 };
 

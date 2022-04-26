@@ -63,6 +63,7 @@ module.exports = {
             title: 'Forwwward Studio - Digital Product Studio',
             filename: 'index.html',
             template: path.resolve(__dirname, 'src/index.html'),
+            scriptLoading: 'defer'
         }),
         new HtmlWebpackPlugin({
             title: 'Forwwward Studio - Work',

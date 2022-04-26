@@ -10,6 +10,10 @@ import WorkSlide2 from '../images/studio/work-2.png';
 import WorkSlide3 from '../images/studio/work-3.png';
 import WorkSlide4 from '../images/studio/work-4.png';
 
+import WhatWeDo from '../images/studio/what-we-do.png';
+import Pedro from '../images/studio/pedro.png';
+import Eduardo from '../images/studio/eduardo.png';
+
 function component() {
     let heroSlide1 = document.querySelector('.hero__slide--1');
     let heroSlide2 = document.querySelector('.hero__slide--2');
@@ -53,6 +57,21 @@ function component() {
 
         heroSlide4.src = WorkSlide4;
         heroSlide4.alt = 'Work Slide 4';
+    }
+
+    if(document.body.id === 'studio') {
+        let whatWeDo = document.querySelector('.what-we-do-img');
+        let imgTeam1 = document.querySelector('.img-team-1');
+        let imgTeam2 = document.querySelector('.img-team-2');
+
+        whatWeDo.src = WhatWeDo;
+        whatWeDo.alt = 'What We Do';
+
+        imgTeam1.src = Pedro;
+        imgTeam1.alt = 'Pedro Gil';
+
+        imgTeam2.src = Eduardo;
+        imgTeam2.alt = 'Eduardo Martins';
     }
 }
 
