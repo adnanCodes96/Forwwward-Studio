@@ -1,6 +1,10 @@
 .menu {
     width: 3rem;
 
+    @media only screen and (min-width: $tablet-media-query) {
+        display: none;
+    }
+
     &__line {
         background-color: $color-tertiary;
         height: .2rem;
@@ -13,5 +17,94 @@
 }
 
 .nav {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-color: $color-primary;
     display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    @media only screen and (min-width: $tablet-media-query) {
+        position: relative;
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+    }
+
+
+    & ul {
+        @media only screen and (min-width: $tablet-media-query) {
+            display: flex;
+        }
+    }
+
+    & li {
+        margin-bottom: 5rem;
+
+        @media only screen and (min-width: $tablet-media-query) {
+            margin-bottom: 0rem;
+
+            &:not(:last-child) {
+                margin-right: 5rem;
+            }
+        }
+    }
+
+    & .close-nav {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        @media only screen and (min-width: $tablet-media-query) {
+            display: none;
+        }
+    }
+
+    & .logo-main {
+        position: relative;
+
+        @media only screen and (min-width: $tablet-media-query) {
+            display: none;
+        }
+
+        & .arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.4);
+        }
+    }
+
+    & .link {
+        color: $color-secondary;
+        font-size: 3.2rem;
+        line-height: 3.5rem;
+
+        @media only screen and (min-width: $tablet-media-query) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+
+    & .active-page {
+        color: rgba($color-secondary, .2);
+    }
+
+    & .copy p {
+        margin-bottom: 2rem;
+
+        @media only screen and (min-width: $tablet-media-query) {
+            display: none;
+        }
+    }
 }

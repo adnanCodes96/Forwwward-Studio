@@ -18,6 +18,7 @@
     & .grid {
         padding-top: 10rem;
         grid-template-rows: repeat(4, auto);
+        height: 100%;
 
         &__item {
             &--1 {

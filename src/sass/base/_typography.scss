@@ -134,6 +134,12 @@ a {
         font-size: 1.5rem;
         line-height: 2rem;
     }
+
+    &--copy {
+        color: $color-quaternary;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
 }
 
 ul {

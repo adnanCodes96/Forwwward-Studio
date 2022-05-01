@@ -36,7 +36,8 @@
 
     &__img {
         display: inline-block;
-        height: 18.5rem;
+        max-height: 42rem !important;
+        height: auto;
         width: 100%;
         margin-bottom: 3rem;
         

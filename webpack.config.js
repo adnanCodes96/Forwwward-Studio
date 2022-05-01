@@ -63,7 +63,22 @@ module.exports = {
             title: 'Forwwward Studio - Digital Product Studio',
             filename: 'index.html',
             template: path.resolve(__dirname, 'src/index.html'),
-            scriptLoading: 'defer'
+            scriptLoading: 'defer',
+            meta: {
+                'author': {name: 'author', content: 'Adnan Musinovic'},
+                'description': {name: 'description', content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'},
+                'keyword': {name: 'keywords', content: 'Forwwward Studio, Web Design, Web Development, Marketing'},
+                'og:title': { property: 'og:title', content: 'Forwwward Studio - Digital Product Studio'},
+                'og:description': { property: 'og:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
+                'og:type': { property: 'og:type', content: 'website' },
+                'og:url': { property: 'og:url', content: '...' },
+                'og:image': { property: 'og:image', content: 'src/images/facebook-share-img.png' },
+                'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
+                'twitter:title': { name: 'twitter:title', content: 'Forwwward Studio - Digital Product Studio' },
+                'twitter:description': { name: 'twitter:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
+                'twitter:image': { name: 'twitter:image', content: 'src/images/twitter-share-img.png' },
+                'theme-color': {name: 'theme-color', content: '#191919'}
+            }
         }),
         new HtmlWebpackPlugin({
             title: 'Forwwward Studio - Work',
