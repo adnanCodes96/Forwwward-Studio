@@ -24,6 +24,10 @@
 
 .digital-product-studio {
     padding: 5rem 0rem;
+
+    @media only screen and(min-width: $tablet-media-query) {
+        padding: 10rem 0rem;
+    }
 }
 
 .card {
@@ -61,12 +65,38 @@
 
 .remarkable-experiences {
     padding: 5rem 0;
+
+    @media only screen and(min-width: $tablet-media-query) {
+        padding: 10rem 0rem;
+    }
+
+    &-mobile {
+        @media only screen and(min-width: $tablet-media-query) {
+            display: none;
+        }
+    }
+
+    &-slider {
+        display: none;
+        @media only screen and(min-width: $tablet-media-query) {
+            background-color: $color-secondary;
+            display: block;
+        }
+    }
 }
 
 .product-idea {
     padding: 5rem 0rem;
+
+    @media only screen and(min-width: $tablet-media-query) {
+        padding: 10rem 0rem;
+    }
 }
 
 .decentarlized-studio {
     padding: 5rem 0rem;
+
+    @media only screen and(min-width: $tablet-media-query) {
+        padding: 10rem 0rem;
+    }
 }

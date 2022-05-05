@@ -26,18 +26,33 @@ a {
         color: $color-secondary;
         font-size: 4.8rem;
         line-height: 5.2rem;
+
+        @media only screen and(min-width: $tablet-media-query) {
+            font-size: 6.6rem;
+            line-height: 7.3rem;
+        }
     }
 
     &--secondary {
         color: $color-secondary;
         font-size: 3.2rem;
         line-height: 3.5rem;
+
+        @media only screen and(min-width: $tablet-media-query) {
+            font-size: 5.8rem;
+            line-height: 6.4rem;
+        }
     }
 
     &--tertiary {
         color: $color-secondary;
         font-size: 2.6rem;
         line-height: 2.8rem;
+
+        @media only screen and(min-width: $tablet-media-query) {
+            font-size: 3.2rem;
+            line-height: 3.5rem;
+        }
     }
 
     &--quaternary {
@@ -45,6 +60,11 @@ a {
         font-size: 2rem;
         line-height: 2.2rem;
         margin-bottom: 2rem;
+
+        @media only screen and(min-width: $tablet-media-query) {
+            font-size: 2.6rem;
+            line-height: 2.9rem;
+        }
     }
 
     &--quinary {
@@ -59,6 +79,13 @@ a {
         font-size: 2.4rem;
         line-height: 4.8rem;
         margin-bottom: .8rem;
+    }
+
+    &--footer {
+        color: $color-octonary;
+        font-size: 1.6rem;
+        font-weight: 18rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -97,6 +124,11 @@ a {
         color: $color-quaternary;
         font-size: 1.6rem;
         line-height: 1.7rem;
+
+        @media only screen and(min-width: $tablet-media-query) {
+            font-size: 2.6rem;
+            line-height: 2.9rem;
+        }
     }
 
     &--secondary {
@@ -195,4 +227,52 @@ input[type="text"],
 input[type="email"],
 textarea {
     color: $color-secondary;
+}
+
+.footer {
+    &--link {
+        display: inline-block;
+        color: $color-secondary;
+        font-size: 1.8rem;
+        line-height: 3.3rem;
+        position: relative;
+        overflow: hidden;
+        margin: .4rem 0rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            height: .1rem;
+            width: 0%;
+            background-color: $color-secondary;
+            transition: .3s ease;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    &--copy {
+        color: $color-quaternary;
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+    }
+
+    &--privacy {
+        color: $color-quaternary;
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+        display: flex;
+
+        & span {
+            display: inline-block;
+            color: $color-tertiary;
+            margin-left: 1rem;
+        }
+    }
 }

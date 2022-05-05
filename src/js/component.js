@@ -4,11 +4,13 @@ import HeroSlide3 from '../images/hero/hero-3.png';
 import YMC from '../images/hero/ymc.png';
 import Attachment from '../images/hero/attachment-project.png';
 import Boringbits from '../images/hero/boringbits.png';
+import decentralizenStudioImage from '../images/hero/decentralized-banner.png';
 
 import WorkSlide1 from '../images/studio/work-1.png';
 import WorkSlide2 from '../images/studio/work-2.png';
 import WorkSlide3 from '../images/studio/work-3.png';
 import WorkSlide4 from '../images/studio/work-4.png';
+
 
 import WhatWeDo from '../images/studio/what-we-do.png';
 import Pedro from '../images/studio/pedro.png';
@@ -20,9 +22,12 @@ function component() {
     let heroSlide3 = document.querySelector('.hero__slide--3');
 
     if(document.body.id === 'home') {
-        let ymc = document.querySelector('.ymc-img');
+        let ymc = document.querySelectorAll('.ymc-img');
         let atc = document.querySelector('.atc-img');
         let boringbits = document.querySelector('.boringbits');
+        let decentralizedStudioBanner = document.querySelector('.decentralized-studio-img');
+
+        decentralizedStudioBanner.src = decentralizenStudioImage;
 
         heroSlide1.src = HeroSlide1;
         heroSlide1.alt = 'Hero Slide 1';
@@ -33,7 +38,9 @@ function component() {
         heroSlide3.src = HeroSlide3;
         heroSlide3.alt = 'Hero Slide 3';
 
-        ymc.src = YMC;
+        ymc.forEach(ymcImg => {
+            ymcImg.src = YMC;
+        });
         ymc.alt = 'YMC';
 
         atc.src = Attachment;

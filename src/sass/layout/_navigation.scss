@@ -53,9 +53,27 @@
 
         @media only screen and (min-width: $tablet-media-query) {
             margin-bottom: 0rem;
+            position: relative;
 
             &:not(:last-child) {
                 margin-right: 5rem;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0%;
+                bottom: 0%;
+                height: .1rem;
+                width: 0%;
+                background-color: $color-secondary;
+                transition: ease .3s;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
             }
         }
     }

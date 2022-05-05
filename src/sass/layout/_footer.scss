@@ -1,6 +1,17 @@
 .footer {
-    // position: absolute;
-    // bottom: 0%;
-    // width: 100%;
     padding: 3rem 0rem;
+
+    &--sm {
+        @media only screen and(min-width: $tablet-media-query) {
+            display: none;
+        }
+    }
+
+    &--lg {
+        display: none;
+
+        @media only screen and(min-width: $tablet-media-query) {
+            display: block;
+        }
+    }
 }

@@ -81,5 +81,11 @@ input[type="submit"] {
         border-radius: .5rem;
         font-size: 1.5rem;
         line-height: 2rem;
+        transition: all .3s;
+
+        &:hover {
+            background-color: $color-octonary;
+            color: $color-tertiary;
+        }
     }
 }
