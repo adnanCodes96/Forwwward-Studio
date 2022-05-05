@@ -1,6 +1,12 @@
 .hero {
-    height: 100vh;
+    height: 100%;
     width: 100%;
+
+    @media only screen and(min-width: $tablet-media-query) {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
 
     &__slider {
         position: relative;
@@ -12,7 +18,7 @@
             position: absolute;
             top: 0%;
             left: 0%;
-    }
+        }
     }
 }
 
