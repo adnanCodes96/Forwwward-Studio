@@ -509,10 +509,9 @@ textarea {
   width: 100%; }
 
 textarea {
-  display: inline-block;
-  height: 35px;
-  resize: none;
-  padding: 1rem; }
+  padding-bottom: 0rem !important;
+  height: 3.5rem;
+  resize: none; }
 
 #upload-file {
   opacity: 0;

@@ -91,10 +91,9 @@ textarea {
 }
 
 textarea {
-    display: inline-block;
-    height: 35px;
+    padding-bottom: 0rem !important;
+    height: 3.5rem;
     resize: none;
-    padding: 1rem;
 }
 
 #upload-file {
