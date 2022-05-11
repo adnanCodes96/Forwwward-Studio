@@ -269,6 +269,10 @@ textarea {
 .btn {
   display: flex;
   align-items: center; }
+  .btn span {
+    color: #191919;
+    font-size: 1.8rem;
+    line-height: 1.5rem; }
   .btn .circle {
     height: 6rem;
     width: 6rem;

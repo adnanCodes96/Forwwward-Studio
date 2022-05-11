@@ -65,6 +65,26 @@ function component() {
         featuredWork.forEach((item, index )=> {
             (index % 2 == 0)?item.classList.add('featured__work--left-img'):item.classList.add('featured__work--right-img');
         });
+
+        // let loadMoreBtn = document.querySelector('#loadMore');
+        // let currentWorks = 3;
+
+        // loadMoreBtn.addEventListener('click', function(e) {
+        //     e.preventDefault();
+        //     let works = [...featuredWork];
+
+        //     for(let i = currentWorks; i < currentWorks + 3; i++) {
+        //         works[i].style.display = 'flex';
+        //     }
+
+        //     currentWorks += 3;
+
+        //     console.log(currentWorks);
+
+        //     if(currentWorks >= works.length) {
+        //         loadMoreBtn.style.display = 'none';
+        //     }
+        // });
     }
 
     if(document.body.id === 'studio') {
