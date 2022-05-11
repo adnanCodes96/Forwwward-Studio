@@ -1,11 +1,61 @@
 .hero {
-    height: 100%;
+    overflow: hidden;
+    height: 100vh;
     width: 100%;
 
     @media only screen and(min-width: $tablet-media-query) {
         height: 100vh;
         display: flex;
         align-items: center;
+    }
+
+    & .gradient__parent {
+        position: absolute;
+        top: -5%;
+        left: -5%;
+        z-index: -1;
+        height: 50rem;
+        width: 50rem;
+        transform: rotate(345deg);
+
+        & .gradient--1 {
+            position: absolute;
+            top: 0%;
+            left: -5%;
+            right: initial;
+            background-color: #6E2D96;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            filter: blur(5rem);
+            opacity: 0.8;
+        }
+
+        & .gradient--2 {
+            position: absolute;
+            top: 17%;
+            left: -22%;
+            right: initial;
+            background-color: #EBA1C0;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            filter: blur(5rem);
+            opacity: 0.8;
+        }
+
+        & .gradient--3 {
+            position: absolute;
+            top: 23%;
+            left: 0%;
+            right: initial;
+            background-color: #CFA1F3;
+            height: 50%;
+            width: 50%;
+            border-radius: 50%;
+            filter: blur(5rem);
+            opacity: 0.8;
+        }
     }
 
     &__slider {
@@ -24,7 +74,7 @@
 
 .digital-product-studio {
     padding: 5rem 0rem;
-
+    
     @media only screen and(min-width: $tablet-media-query) {
         padding: 10rem 0rem;
     }
@@ -42,6 +92,13 @@
             display: inline-block;
             margin-bottom: 3rem;
         }
+
+        @media only screen and(min-width: $tablet-media-query) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: row;
+        }
     }
 
     &__img {
@@ -56,6 +113,17 @@
             width: 100%;
             object-fit: cover;
         }
+
+        @media only screen and(min-width: $tablet-media-query) {
+            width: 60%;
+            margin-bottom: 0rem;
+        }
+    }
+
+    &__content {
+        @media only screen and(min-width: $tablet-media-query) {
+            width: 40%;
+        }
     }
 
     & p {
@@ -64,7 +132,7 @@
 }
 
 .remarkable-experiences {
-    padding: 5rem 0;
+    padding: 5rem 0rem;
 
     @media only screen and(min-width: $tablet-media-query) {
         padding: 10rem 0rem;
@@ -79,7 +147,7 @@
     &-slider {
         display: none;
         @media only screen and(min-width: $tablet-media-query) {
-            background-color: $color-secondary;
+            // background-color: $color-secondary;
             display: block;
         }
     }

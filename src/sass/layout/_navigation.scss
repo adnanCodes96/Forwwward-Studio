@@ -73,6 +73,10 @@
             &:hover {
                 &::after {
                     width: 100%;
+
+                    &.active-page {
+                        pointer-events: none;
+                    }
                 }
             }
         }
@@ -115,7 +119,8 @@
     }
 
     & .active-page {
-        color: rgba($color-secondary, .2);
+        color: $color-octonary;
+        pointer-events: none;
     }
 
     & .copy p {

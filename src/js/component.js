@@ -11,10 +11,10 @@ import WorkSlide2 from '../images/studio/work-2.png';
 import WorkSlide3 from '../images/studio/work-3.png';
 import WorkSlide4 from '../images/studio/work-4.png';
 
-
 import WhatWeDo from '../images/studio/what-we-do.png';
 import Pedro from '../images/studio/pedro.png';
 import Eduardo from '../images/studio/eduardo.png';
+import NextGenImg from '../images/studio/next-gen.png';
 
 function component() {
     let heroSlide1 = document.querySelector('.hero__slide--1');
@@ -22,11 +22,8 @@ function component() {
     let heroSlide3 = document.querySelector('.hero__slide--3');
 
     if(document.body.id === 'home') {
-        let ymc = document.querySelectorAll('.ymc-img');
-        let atc = document.querySelector('.atc-img');
-        let boringbits = document.querySelector('.boringbits');
         let decentralizedStudioBanner = document.querySelector('.decentralized-studio-img');
-
+        
         decentralizedStudioBanner.src = decentralizenStudioImage;
 
         heroSlide1.src = HeroSlide1;
@@ -38,16 +35,14 @@ function component() {
         heroSlide3.src = HeroSlide3;
         heroSlide3.alt = 'Hero Slide 3';
 
-        ymc.forEach(ymcImg => {
-            ymcImg.src = YMC;
-        });
-        ymc.alt = 'YMC';
+        
+    //    ymc.alt = 'YMC';
 
-        atc.src = Attachment;
-        atc.ALT = 'Attachment Project';
+    //     atc.src = Attachment;
+    //     atc.alt = 'Attachment Project';
 
-        boringbits.src = Boringbits;
-        boringbits.ALT = 'Boringbits';
+    //     boringbits.src = Boringbits;
+    //     boringbits.ALT = 'Boringbits';
     };
 
     if(document.body.id === 'work') {
@@ -64,12 +59,19 @@ function component() {
 
         heroSlide4.src = WorkSlide4;
         heroSlide4.alt = 'Work Slide 4';
+
+        let featuredWork = document.querySelectorAll('.featured__work');
+
+        featuredWork.forEach((item, index )=> {
+            (index % 2 == 0)?item.classList.add('featured__work--left-img'):item.classList.add('featured__work--right-img');
+        });
     }
 
     if(document.body.id === 'studio') {
         let whatWeDo = document.querySelector('.what-we-do-img');
         let imgTeam1 = document.querySelector('.img-team-1');
         let imgTeam2 = document.querySelector('.img-team-2');
+        const nextGenImg = document.querySelector('.next-gen-img');
 
         whatWeDo.src = WhatWeDo;
         whatWeDo.alt = 'What We Do';
@@ -79,7 +81,28 @@ function component() {
 
         imgTeam2.src = Eduardo;
         imgTeam2.alt = 'Eduardo Martins';
+
+        nextGenImg.src = NextGenImg;
+        nextGenImg.alt = 'Forwwward Studio Next Generation';
     }
+
+    let ymc = document.querySelectorAll('.ymc-img');
+    let atc = document.querySelectorAll('.atc-img');
+    let boringbits = document.querySelectorAll('.boringbits');
+
+    ymc.forEach(ymcImg => {
+        ymcImg.src = YMC;
+    });
+
+    atc.forEach(atcImg => {
+        atcImg.src = Attachment;
+    });
+
+    boringbits.forEach(bts => {
+        bts.src = Boringbits;
+    });
+
+
 }
 
 export default component;

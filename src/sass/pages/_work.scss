@@ -3,6 +3,36 @@
     padding: 5rem 0rem;
 }
 
+.featured__work {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--left-img {
+        & .card__img {
+            order: 2;
+        }
+
+        & .card__content {
+            @media only screen and(min-width: $tablet-media-query) {
+                padding-right: 2rem;
+            }
+        }
+    }
+
+    &--right-img {
+        & .card__img {
+            order: 0;
+        }
+    }
+
+    & .card__content {
+        @media only screen and(min-width: $tablet-media-query) {
+            padding-left: 2rem;
+        }
+    }
+}
+
 .we-can-help {
     padding: 5rem 0;
 }

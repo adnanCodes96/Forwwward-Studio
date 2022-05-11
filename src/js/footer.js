@@ -1,8 +1,8 @@
-function insertFooter(){
+function insertFooter() {
 
     function footer(x) {
-            if(x.matches) {
-                const footerSM = `
+        if (x.matches) {
+            const footerSM = `
                     <footer class="footer footer--sm">
                         <div class="grid">
                             <div class="grid__item grid__item--1">
@@ -23,17 +23,20 @@ function insertFooter(){
                             </div>
                         </div>
                     </footer>`;
+
+            if(document.body.id !== 'contact') {
+                document.body.insertAdjacentHTML('beforeend', footerSM);
+
+                const footerLg = document.querySelector('.footer--lg');
+
+                if (typeof (footerLg) != "undefined" && footerLg != null) {
+                    footerLg.remove();
+                }
                 
-                    document.body.insertAdjacentHTML('beforeend', footerSM);
+            }
 
-                    const footerLg = document.querySelector('.footer--lg');
-
-                    if(typeof(footerLg) != "undefined" && footerLg != null) {
-                       footerLg.remove();
-                    }
-                    
-            } else {
-                const footerLG = `
+        } else {
+            const footerLG = `
                         <footer class="footer footer--lg">
                             <div class="grid">
                                 <div class="grid__item grid__item--1">
@@ -87,21 +90,23 @@ function insertFooter(){
                                 </div>
                             </div>
                         </footer>`;
-                        
-                        document.body.insertAdjacentHTML('beforeend', footerLG);
 
-                        const footerSm = document.querySelector('.footer--sm');
+            if(document.body.id !== 'contact') {
+                document.body.insertAdjacentHTML('beforeend', footerLG);
 
-                        if(typeof(footerSm) != "undefined" && footerSm != null) {
-                        footerSm.remove();
-                        }
+                const footerSm = document.querySelector('.footer--sm');
+
+                if (typeof (footerSm) != "undefined" && footerSm != null) {
+                    footerSm.remove();
+                }
             }
-        };
+        }
+    };
 
-    let x = window.matchMedia("(max-width: 786px)");
+    let x = window.matchMedia("(max-width: 767px)");
     footer(x);
     x.addListener(footer);
 
-    }
+}
 
 export default insertFooter;

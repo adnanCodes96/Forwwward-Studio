@@ -89,12 +89,25 @@
     grid-template-columns: repeat(4, auto);
     gap: 1rem;
 
+    @media only screen and(min-width: $tablet-media-query) {
+        width: 100%;
+        max-width: 114rem;
+        margin: 5rem auto 0rem auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__item {
         background-color: $color-secondary;
         padding: 2.5rem 1rem;
         height: 33.5rem;
         width: 29.4rem;
         position: relative;
+
+        @media only screen and(min-width: $tablet-media-query) {
+            width: 23%;
+            height: auto;
+        }
     }
 
     &__arrow {

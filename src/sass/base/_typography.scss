@@ -81,11 +81,33 @@ a {
         margin-bottom: .8rem;
     }
 
+    &--centered-slider {
+        color: $ccolor-black;
+        font-size: 2.5rem;
+        line-height: 4.6rem;
+        padding: 4rem 0rem;
+    }
+
     &--footer {
         color: $color-octonary;
         font-size: 1.6rem;
         font-weight: 18rem;
         margin-bottom: 2rem;
+    }
+
+    &--underline {
+        position: relative;
+        padding-bottom: .5rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            height: .1rem;
+            width: 100%;
+            background-color: $color-octonary;
+        }
     }
 }
 
@@ -124,6 +146,11 @@ a {
         color: $color-quaternary;
         font-size: 1.6rem;
         line-height: 1.7rem;
+
+        &-light {
+            @extend .text--primary;
+            color: $color-quaternary;
+        }
 
         @media only screen and(min-width: $tablet-media-query) {
             font-size: 2.6rem;
@@ -211,14 +238,6 @@ ul {
         & li {
             font-size: 1.3rem;
             line-height: 2rem;
-        }
-    }
-}
-
-.centered-slider {
-    &__item {
-        & .heading {
-            margin-top: 2.6rem;
         }
     }
 }
