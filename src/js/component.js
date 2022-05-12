@@ -4,6 +4,12 @@ import HeroSlide3 from '../images/hero/hero-3.png';
 import YMC from '../images/hero/ymc.png';
 import Attachment from '../images/hero/attachment-project.png';
 import Boringbits from '../images/hero/boringbits.png';
+import MindOnly from '../images/hero/mind-only.png';
+import ArieStudioSwimmwear from '../images/hero/areia-studio-swimwear.png';
+import AlterVenturePArtners from '../images/hero/alter-venture-partners.png';
+import Briefar from '../images/hero/briefar.png';
+
+
 import decentralizenStudioImage from '../images/hero/decentralized-banner.png';
 
 import WorkSlide1 from '../images/studio/work-1.png';
@@ -108,7 +114,19 @@ function component() {
 
     let ymc = document.querySelectorAll('.ymc-img');
     let atc = document.querySelectorAll('.atc-img');
-    let boringbits = document.querySelectorAll('.boringbits');
+    let boringbits = document.querySelectorAll('.boringbits-img');
+    let mindOnly = document.querySelectorAll('.mo-img');
+    let arieStudioSwimmwear = document.querySelectorAll('.ast-img');
+    let alterVenturePArtners = document.querySelectorAll('.avp-img');
+    let briefar = document.querySelectorAll('.briefar-img');
+
+    // function displayImages(htmlEl, image) {
+    //     htmlEl.forEach(img => {
+    //         img.src = image;
+    //     })
+    // }
+
+    // displayImages([ymc, atc], [YMC, Attachment]);
 
     ymc.forEach(ymcImg => {
         ymcImg.src = YMC;
@@ -121,6 +139,24 @@ function component() {
     boringbits.forEach(bts => {
         bts.src = Boringbits;
     });
+
+    mindOnly.forEach(mo => {
+        mo.src = MindOnly;
+    })
+
+    arieStudioSwimmwear.forEach(ast => {
+        ast.src = ArieStudioSwimmwear;
+    })
+
+    alterVenturePArtners.forEach(avp => {
+        avp.src = AlterVenturePArtners;
+    })
+
+    briefar.forEach(brf => {
+        brf.src = Briefar;
+    })
+
+
 
 
 }

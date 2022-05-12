@@ -30,18 +30,28 @@ main {
 }
 
 .glide__slide {
-    background-color: crimson;
-    width: 24.5rem;
-    height: 39.5rem !important;
+    &--type {
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+        color: $color-tertiary;
+        display: block;
+    }
+
+    &__heading {
+        & h2 {
+            color: $color-tertiary;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 4.4rem;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+    }
 
     & .image__container {
-        width: 100%;
-        height: 50%;
-
         & img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
+            width: auto;
+            max-width: 100%;
         }
     }
 }

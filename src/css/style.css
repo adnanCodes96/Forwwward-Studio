@@ -23,17 +23,23 @@ main {
   width: 100%;
   min-height: 100%; }
 
-.glide__slide {
-  background-color: crimson;
-  width: 24.5rem;
-  height: 39.5rem !important; }
-  .glide__slide .image__container {
-    width: 100%;
-    height: 50%; }
-    .glide__slide .image__container img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover; }
+.glide__slide--type {
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  color: #FFF;
+  display: block; }
+
+.glide__slide__heading h2 {
+  color: #FFF;
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 4.4rem;
+  font-weight: 400;
+  line-height: 1.4; }
+
+.glide__slide .image__container img {
+  width: auto;
+  max-width: 100%; }
 
 html {
   font-size: 62.5%; }
@@ -265,6 +271,12 @@ textarea {
   .button--link:hover {
     background-color: #92A5A9;
     color: #FFF; }
+  @media only screen and (min-width: 768px) {
+    .button--link {
+      height: 12.5rem;
+      width: 12.5rem;
+      font-size: 1.6rem;
+      line-height: 1.6rem; } }
 
 .btn {
   display: flex;
@@ -392,6 +404,11 @@ input[type="submit"] {
     background-color: #FFF; }
     .line .dragg--work {
       width: 25%; }
+
+@media only screen and (min-width: 768px) {
+  .glide {
+    width: calc(100% - 13rem) !important;
+    margin: 0% auto; } }
 
 .centered-slider {
   position: relative;
@@ -722,6 +739,9 @@ textarea {
     grid-column: 1/-1;
     grid-row: 2/3;
     margin-bottom: 2.8rem; }
+    @media only screen and (min-width: 768px) {
+      .remarkable-experiences .grid .grid__item--2 {
+        margin-bottom: 5rem; } }
   .remarkable-experiences .grid .grid__item--3 {
     grid-column: 1/-1;
     grid-row: 3/4;
@@ -759,22 +779,34 @@ textarea {
     grid-row: 3/-1 !important;
     margin-bottom: 0rem !important;
     position: relative; }
-    .remarkable-experiences-slider .grid__item--3 .glider-prev {
-      position: absolute;
-      top: 50%;
-      left: -8rem;
-      z-index: 22; }
+    @media only screen and (min-width: 768px) {
+      .remarkable-experiences-slider .grid__item--3 .glider-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -6.5rem;
+        z-index: 22;
+        padding: 2rem;
+        border-radius: 50%;
+        border: 0.1rem solid #191919; } }
+    @media only screen and (min-width: 768px) {
       .remarkable-experiences-slider .grid__item--3 .glider-prev svg {
-        height: 60px;
-        width: 60px; }
-    .remarkable-experiences-slider .grid__item--3 .glider-next {
-      position: absolute;
-      top: 50%;
-      right: -8rem;
-      z-index: 22; }
+        height: auto;
+        width: 2rem; } }
+    @media only screen and (min-width: 768px) {
+      .remarkable-experiences-slider .grid__item--3 .glider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -6.5rem;
+        z-index: 22;
+        padding: 2rem;
+        border-radius: 50%;
+        border: 0.1rem solid #191919; } }
+    @media only screen and (min-width: 768px) {
       .remarkable-experiences-slider .grid__item--3 .glider-next svg {
-        height: 60px;
-        width: 60px; }
+        height: auto;
+        width: 2rem; } }
 
 .product-idea .grid {
   grid-template-rows: repeat(5, auto); }

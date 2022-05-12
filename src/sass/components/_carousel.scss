@@ -80,6 +80,13 @@
     }
 }
 
+.glide {
+    @media only screen and(min-width: $tablet-media-query) {
+        width: calc(100% - 13rem) !important;
+        margin: 0% auto;
+    }
+}
+
 .centered-slider {
     position: relative;
     overflow: hidden;
