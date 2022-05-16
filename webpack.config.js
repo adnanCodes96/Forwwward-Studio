@@ -72,11 +72,11 @@ module.exports = {
                 'og:description': { property: 'og:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
                 'og:type': { property: 'og:type', content: 'website' },
                 'og:url': { property: 'og:url', content: 'https://forwwward--studio.000webhostapp.com/' },
-                'og:image': { property: 'og:image', content: 'src/images/facebook-share-img.png' },
+                'og:image': { property: 'og:image', content: '../src/images/facebook-share-img.png' },
                 'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
                 'twitter:title': { name: 'twitter:title', content: 'Forwwward Studio - Digital Product Studio' },
                 'twitter:description': { name: 'twitter:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'twitter:image': { name: 'twitter:image', content: 'src/images/twitter-share-img.png' },
+                'twitter:image': { name: 'twitter:image', content: '../src/images/twitter-share-img.png' },
                 'theme-color': {name: 'theme-color', content: '#191919'}
             }
         }),

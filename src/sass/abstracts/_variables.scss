@@ -11,3 +11,9 @@ $ccolor-black: #000;
 
 // Media queries
 $tablet-media-query: 768px;
+$small-screen-query: 1024px;
+
+.light--mode {
+    background-color: $color-secondary;
+    transition: all .5s cubic-bezier(0.23, 1, 0.320, 1);
+}

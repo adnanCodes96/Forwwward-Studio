@@ -60,10 +60,11 @@
 }
 
 label {
-    color: $color-secondary;
+    color: $color-quaternary;
     position: absolute;
     left: 1rem;
     bottom: 1rem;
+    font-size: 1.4rem;
 }
 
 .label--attach {

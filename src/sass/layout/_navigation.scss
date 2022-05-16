@@ -50,6 +50,7 @@
 
     & li {
         margin-bottom: 5rem;
+        overflow: hidden;
 
         @media only screen and (min-width: $tablet-media-query) {
             margin-bottom: 0rem;
@@ -58,28 +59,43 @@
             &:not(:last-child) {
                 margin-right: 5rem;
             }
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0%;
-                bottom: 0%;
-                height: .1rem;
-                width: 0%;
-                background-color: $color-secondary;
-                transition: ease .3s;
-            }
-
-            &:hover {
-                &::after {
-                    width: 100%;
-
-                    &.active-page {
-                        pointer-events: none;
-                    }
-                }
-            }
         }
+    }
+
+    & .link {
+        position: relative;
+        padding-bottom: .3rem;
+        user-select: none;
+        color: $color-secondary;
+        font-size: 3.2rem;
+        line-height: 3.5rem;
+
+        @media only screen and (min-width: $tablet-media-query) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            transform: translateX(-110%);
+            height: .1rem;
+            width: 100%;
+            background-color: $color-tertiary;
+            transition: all .3s ease;
+        }
+
+        &:hover::after{
+            transform: translateX(0%);
+        }
+
+    }
+
+    & .active-page {
+        color: $color-octonary;
+        pointer-events: none;
     }
 
     & .close-nav {
@@ -105,22 +121,6 @@
             left: 50%;
             transform: translate(-50%, -50%) scale(.4);
         }
-    }
-
-    & .link {
-        color: $color-secondary;
-        font-size: 3.2rem;
-        line-height: 3.5rem;
-
-        @media only screen and (min-width: $tablet-media-query) {
-            font-size: 1.5rem;
-            line-height: 2rem;
-        }
-    }
-
-    & .active-page {
-        color: $color-octonary;
-        pointer-events: none;
     }
 
     & .copy p {

@@ -7,7 +7,7 @@ function insertFooter() {
                         <div class="grid">
                             <div class="grid__item grid__item--1">
                                 <div class="logo">
-                                    <a class="logo--text" href="index.html">Forwwward</a>
+                                    <a class="logo--text" href="index.html">Forwwward.</a>
                                 </div>
                         
                                 <div class="general-inquires">
@@ -41,7 +41,7 @@ function insertFooter() {
                             <div class="grid">
                                 <div class="grid__item grid__item--1">
                                     <div class="logo">
-                                        <a class="logo--text" href="index.html">Forwwward</a>
+                                        <a class="logo--text" href="index.html">Forwwward.</a>
                                     </div>
 
                                     <div class="general-inquires">
@@ -58,15 +58,15 @@ function insertFooter() {
                                 <div class="grid__item grid__item--4">
                                     <h6 class="heading heading--footer">About</h6>
                                     <ul>
-                                        <li><a class="footer--link" href="#">About</a></li>
-                                        <li><a class="footer--link" href="#">Culture</a></li>
-                                        <li><a class="footer--link" href="#">Contact</a></li>
+                                        <li><a class="footer--link" href="studio.html">About</a></li>
+                                        <li><a class="footer--link" href="index.html#culture">Culture</a></li>
+                                        <li><a class="footer--link" href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="grid__item grid__item--5">
                                     <h6 class="heading heading--footer">Resources</h6>
                                     <ul>
-                                        <li><a class="footer--link" href="#">Work</a></li>
+                                        <li><a class="footer--link" href="work.html">Work</a></li>
                                         <li><a class="footer--link" href="#">Process</a></li>
                                         <li><a class="footer--link" href="studio.html#whatWeDo">Services</a></li>
                                     </ul>
@@ -74,9 +74,9 @@ function insertFooter() {
                                 <div class="grid__item grid__item--6">
                                     <h6 class="heading heading--footer">Follow us</h6>
                                     <ul>
-                                        <li><a class="footer--link" href="#">Behance</a></li>
-                                        <li><a class="footer--link" href="#">Dribbble</a></li>
-                                        <li><a class="footer--link" href="#">Instagram</a></li>
+                                        <li><a class="footer--link" href="https://www.behance.net/">Behance</a></li>
+                                        <li><a class="footer--link" href="https://dribbble.com/">Dribbble</a></li>
+                                        <li><a class="footer--link" href="https://www.linkedin.com/">Instagram</a></li>
                                     </ul>
                                 </div>
                                 <div class="grid__item grid__item--7">

@@ -8,6 +8,7 @@ import MindOnly from '../images/hero/mind-only.png';
 import ArieStudioSwimmwear from '../images/hero/areia-studio-swimwear.png';
 import AlterVenturePArtners from '../images/hero/alter-venture-partners.png';
 import Briefar from '../images/hero/briefar.png';
+import ProductIdeaImg from '../images/hero/our-process.png';
 
 
 import decentralizenStudioImage from '../images/hero/decentralized-banner.png';
@@ -22,6 +23,24 @@ import Pedro from '../images/studio/pedro.png';
 import Eduardo from '../images/studio/eduardo.png';
 import NextGenImg from '../images/studio/next-gen.png';
 
+const preloader = document.querySelector('.preloader');
+const heroHeading = document.querySelector('.hero .grid .grid__item--1');
+const heroText = document.querySelector('.hero .grid .grid__item--2');
+const heroSlider = document.querySelector('.hero .grid .grid__item--3');
+const heroSliderControls = document.querySelector('.hero .grid .grid__item--4');
+const heroCta = document.querySelector('.hero .grid .grid__item--5');
+
+// Reveal hero elements on load
+setTimeout(() => {
+    preloader.classList.add('preloader--complete');
+    heroHeading.classList.remove('hidden');
+    heroText.classList.remove('hidden');
+    heroCta.classList.remove('hidden');
+    heroSlider.classList.remove('hidden');
+    heroSliderControls.classList.remove('hidden');
+}, 4700);
+
+
 function component() {
     let heroSlide1 = document.querySelector('.hero__slide--1');
     let heroSlide2 = document.querySelector('.hero__slide--2');
@@ -29,6 +48,7 @@ function component() {
 
     if(document.body.id === 'home') {
         let decentralizedStudioBanner = document.querySelector('.decentralized-studio-img');
+        let ourProcess = document.querySelector('.product-idea-img');
         
         decentralizedStudioBanner.src = decentralizenStudioImage;
 
@@ -41,14 +61,9 @@ function component() {
         heroSlide3.src = HeroSlide3;
         heroSlide3.alt = 'Hero Slide 3';
 
-        
-    //    ymc.alt = 'YMC';
+        ourProcess.src = ProductIdeaImg;
+        ourProcess.alt = 'Our Process';
 
-    //     atc.src = Attachment;
-    //     atc.alt = 'Attachment Project';
-
-    //     boringbits.src = Boringbits;
-    //     boringbits.ALT = 'Boringbits';
     };
 
     if(document.body.id === 'work') {
@@ -72,25 +87,27 @@ function component() {
             (index % 2 == 0)?item.classList.add('featured__work--left-img'):item.classList.add('featured__work--right-img');
         });
 
-        // let loadMoreBtn = document.querySelector('#loadMore');
-        // let currentWorks = 3;
+        const loadMoreBtn = document.querySelector('#loadMore');
+        const works = [...featuredWork];
 
-        // loadMoreBtn.addEventListener('click', function(e) {
-        //     e.preventDefault();
-        //     let works = [...featuredWork];
+        works.splice(0,3).forEach(work => {
+            work.style.display = 'flex';
+        })
 
-        //     for(let i = currentWorks; i < currentWorks + 3; i++) {
-        //         works[i].style.display = 'flex';
-        //     }
+        loadMoreBtn.addEventListener('click', function(e){
+            e.preventDefault();
 
-        //     currentWorks += 3;
+            works.splice(0,3).forEach(work => {
+                work.classList.remove('hidden');
+            })
 
-        //     console.log(currentWorks);
+            if(works.length == 0) {
+                loadMoreBtn.style.display = 'none';
+            }
 
-        //     if(currentWorks >= works.length) {
-        //         loadMoreBtn.style.display = 'none';
-        //     }
-        // });
+        });
+
+
     }
 
     if(document.body.id === 'studio') {
@@ -110,6 +127,45 @@ function component() {
 
         nextGenImg.src = NextGenImg;
         nextGenImg.alt = 'Forwwward Studio Next Generation';
+    }
+
+    if(document.body.id === 'contact') {
+        const nameLabel = document.querySelector('#nameLabel')
+        const name = document.querySelector('#name');
+        const emailLabel = document.querySelector('#emailLabel');
+        const email = document.querySelector('#email');
+        const messageLabel = document.querySelector('#messageLabel');
+        const message = document.querySelector('#message');
+        const attach = document.querySelector('#upload-file');
+        const attachText = document.querySelector('#attachText');
+        const submitBtn = document.querySelector('#submit');
+
+        console.log(attachText.innerText);
+
+        function hideLabel(el, label) {
+            el.addEventListener('keyup', function(){
+                if(el.value !== '') {
+                    label.style.display = 'none';
+                } else {
+                    label.style.display = 'inline-block';
+                }
+            })
+        }
+
+        hideLabel(name, nameLabel);
+        hideLabel(email, emailLabel);
+        hideLabel(message, messageLabel);
+
+        attach.addEventListener('change', function(){
+            let fileName = attach.files[0].name;
+            attachText.innerText = fileName;
+        });
+
+        submitBtn.addEventListener('click', function() {
+            name.value === '';
+            email.value === '';
+            message.value === '';
+        });
     }
 
     let ymc = document.querySelectorAll('.ymc-img');

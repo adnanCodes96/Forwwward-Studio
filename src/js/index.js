@@ -2,11 +2,13 @@ import style from '../css/style.css';
 import component from '../js/component.js';
 import insertFooter from '../js/footer.js';
 import work from '../js/work-showcase.js';
+import slider from '../js/slider.js';
 
 //insertHeader();
 insertFooter();
 work();
 component();
+slider();
 
 document.addEventListener('wheel', function(event) {
     //only vertical scroll

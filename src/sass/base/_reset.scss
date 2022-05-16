@@ -18,15 +18,89 @@ body {
     position: relative;
 }
 
-#content {
-    position: relative;
-    min-height: 100%;
-    // padding-bottom: 16.8rem;
+.preloader {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    z-index: 999999;
+    height: 100%;
+    width: 100%;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: anim-bg !important;
+    animation-duration: 1000ms !important;
+    animation-delay: 3700ms !important;
+    animation-timing-function: ease-in-out !important;
+    animation-fill-mode: both !important;
+    animation-iteration-count: inherit !important;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        z-index: 2;
+        height: .5rem;
+        width: 100%;
+        background-color: $color-octonary;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0%;
+        bottom: 0%;
+        z-index: 3;
+        height: .5rem;
+        width: 0%;
+        background-color: $color-tertiary;
+        animation: load 5s ease;
+        animation-fill-mode: forwards;
+    }
+
+    &__content {
+        height: 25rem;
+        width: 25rem;
+        position: relative;
+    }
+
+    & #svgLogo {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        z-index: 3;
+        height: 100%;
+        width: 100%;
+        animation: rotate 15s infinite linear;
+    }
+
+    & #arrowRight {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: 50%;
+    }
+
+    &--complete {
+        display: none;
+    }
 }
 
 main {
     width: 100%;
     min-height: 100%;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
 }
 
 .glide__slide {
@@ -47,11 +121,61 @@ main {
             line-height: 1.4;
         }
     }
+}
 
-    & .image__container {
-        & img {
-            width: auto;
-            max-width: 100%;
-        }
+@keyframes load {
+    0% {
+        width: 0%;
     }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes anim-bg {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+}
+
+.hero .grid .grid__item--1,
+.hero .grid .grid__item--2,
+.hero .grid .grid__item--3,
+.hero .grid .grid__item--4,
+.hero .grid .grid__item--5 {
+    transition: all 1s cubic-bezier(0.6, 0, 1, 1);
+}
+
+.hero .grid .grid__item--2 {
+    transition-delay: .5s;
+}
+
+.hero .grid .grid__item--5 {
+    transition-delay: 1s;
+}
+
+.hero .grid .grid__item--3,
+.hero .grid .grid__item--4 {
+    transition-delay: 1.3s;
+}
+
+.hero .grid .grid__item--1.hidden,
+.hero .grid .grid__item--2.hidden {
+    opacity: 0;
+    transform: translate3d(0%, 50%, 0%);
+}
+
+.hero .grid .grid__item--5.hidden {
+    opacity: 0;
+    transform: translate3d(0%, 20%, 0%);
+}
+
+.hero .grid .grid__item--3.hidden,
+.hero .grid .grid__item--4.hidden {
+    opacity: 0;
 }

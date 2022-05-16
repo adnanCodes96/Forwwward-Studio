@@ -64,7 +64,7 @@ function work() {
                 <div class="grid__item grid__item--5">
                     <div class="card">
                         <a class="card__img" href="#">
-                            <img class="boringbits" src="" alt="">
+                            <img class="boringbits-img" src="" alt="">
                         </a>
                         <h2 class="heading heading--secondary">Boringbits</h2>
                         <p class="text--quaternary">Boringbits believe entrepreneurs shouldn't

@@ -1,8 +1,29 @@
-//hero slide
+/* Hero Slider */
+
+.hero {
+    &__slider {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+
+        & .hero__slide--1,
+        & .hero__slide--2,
+        & .hero__slide--3,
+        & .hero__slide--4 {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            height: 100% !important;
+            width: 100% !important;
+            object-fit: cover;
+            transition: all .5s ease-in;
+        }
+    }
+}
 
 .line {
     position: relative;
-    height: .1rem;
+    height: .4rem;
     width: 100%;
     background-color: $color-octonary;
     margin: 0rem 2rem;
@@ -66,12 +87,12 @@
 
     & .dragg {
         position: absolute;
-        top: 50%;
+        top: 0%;
         left: 0%;
-        transform: translateY(-50%);
-        height: .3rem;
+        height: .4rem;
         width: 33.3%;
         background-color: $color-tertiary;
+        transition: all .25s ease;
 
         &--work {
             @extend .dragg;
@@ -102,6 +123,10 @@
         margin: 5rem auto 0rem auto;
         display: flex;
         justify-content: space-between;
+    }
+
+    @media only screen and(min-width: $small-screen-query) {
+        padding: 0rem 3rem;
     }
 
     &__item {

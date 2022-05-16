@@ -7,22 +7,14 @@
     background-color: $color-primary;
 }
 
-.great-product {
-    padding: 5rem 0rem;
-}
-
-.what-we-do {
-    padding: 5rem 0rem;
-}
-
-.team {
-    padding: 5rem 0rem;
-}
-
-.connect {
-    padding: 5rem 0rem;
-}
-
+.great-product,
+.what-we-do,
+.team,
+.connect,
 .next-generation {
     padding: 5rem 0rem;
+
+    @media only screen and(min-width: $tablet-media-query) {
+        padding: 10rem 0rem;
+    }
 }

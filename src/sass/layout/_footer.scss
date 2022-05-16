@@ -2,18 +2,4 @@
     padding: 3rem 0rem;
     margin-top: auto;
     width: 100%;
-
-    &--sm {
-        @media only screen and(min-width: $tablet-media-query) {
-            display: none;
-        }
-    }
-
-    &--lg {
-        display: none;
-
-        @media only screen and(min-width: $tablet-media-query) {
-            display: block;
-        }
-    }
 }
