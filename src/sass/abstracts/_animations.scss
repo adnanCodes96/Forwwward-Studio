@@ -1,0 +1,108 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+@keyframes width {
+    from {
+        width: 0%;
+    } to {
+        width: 100%;
+    }
+}
+
+.hero .grid .grid__item--1,
+.hero .grid .grid__item--2,
+.hero .grid .grid__item--3,
+.hero .grid .grid__item--4,
+.hero .grid .grid__item--5 {
+    @include transition;
+}
+
+.hero .grid .grid__item--2 {
+    transition-delay: .5s;
+}
+
+.hero .grid .grid__item--5 {
+    transition-delay: 1s;
+}
+
+.hero .grid .grid__item--3,
+.hero .grid .grid__item--4 {
+    transition-delay: 1.3s;
+}
+
+.hero .grid .grid__item--1.hidden,
+.hero .grid .grid__item--2.hidden {
+    opacity: 0;
+    transform: translate3d(0%, 50%, 0%);
+}
+
+.hero .grid .grid__item--5.hidden {
+    opacity: 0;
+    transform: translate3d(0%, 20%, 0%);
+}
+
+.hero .grid .grid__item--3.hidden,
+.hero .grid .grid__item--4.hidden {
+    opacity: 0;
+}
+
+.intro .grid .grid__item--1,
+.intro .grid .grid__item--2,
+.intro .grid .grid__item--3 {
+    @include transition;
+}
+
+.intro .grid .grid__item--2{
+    transition-delay: .3s;
+}
+
+.intro .grid .grid__item--3{
+    transition-delay: .6s;
+}
+
+.intro .grid .grid__item--1.hidden,
+.intro .grid .grid__item--2.hidden,
+.intro .grid .grid__item--3.hidden{
+    opacity: 0;
+    transform: translate3d(0%, 50%, 0%);
+}
+
+#contactHeading,
+.form,
+#contactText,
+.contact__info {
+    @include transition;
+}
+
+.form {
+    transition-delay: .3s;
+}
+
+#contactText {
+    transition-delay: .6s;
+}
+
+.contact__info {
+    transition-delay: .9s;
+}
+
+#contactHeading.hidden,
+.form.hidden,
+#contactText.hidden,
+.contact__info.hidden {
+    opacity: 0;
+    transform: translate3d(0%, 50%, 0%);
+}

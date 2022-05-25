@@ -14,8 +14,9 @@ html, body {
 }
 
 body {
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     position: relative;
+    transition: background-color .5s ease;
 }
 
 .preloader {
@@ -27,16 +28,14 @@ body {
     z-index: 999999;
     height: 100%;
     width: 100%;
-    background-color: $color-primary;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation-name: anim-bg !important;
-    animation-duration: 1000ms !important;
-    animation-delay: 3700ms !important;
-    animation-timing-function: ease-in-out !important;
-    animation-fill-mode: both !important;
-    animation-iteration-count: inherit !important;
+    background-color: var(--color-primary);
+    @include center-center;
+    animation-name: fadeOut;
+    animation-duration: 1000ms;
+    animation-delay: 3700ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count: inherit;
 
     &::after {
         content: "";
@@ -46,7 +45,7 @@ body {
         z-index: 2;
         height: .5rem;
         width: 100%;
-        background-color: $color-octonary;
+        background-color: var(--color-octonary);
     }
 
     &::before {
@@ -57,8 +56,8 @@ body {
         z-index: 3;
         height: .5rem;
         width: 0%;
-        background-color: $color-tertiary;
-        animation: load 5s ease;
+        background-color: var(--color-tertiary);
+        animation: width 5s ease;
         animation-fill-mode: forwards;
     }
 
@@ -66,29 +65,35 @@ body {
         height: 25rem;
         width: 25rem;
         position: relative;
-    }
-
-    & #svgLogo {
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        z-index: 3;
-        height: 100%;
-        width: 100%;
-        animation: rotate 15s infinite linear;
-    }
-
-    & #arrowRight {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: auto;
-        width: 50%;
+        @include center-center;
     }
 
     &--complete {
         display: none;
+    }
+}
+
+.logo {
+    &__container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    &__circle {
+        @include full-width;
+        @include spin;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.7);
+
+        & path {
+            fill: var(--color-tertiary);
+        }
     }
 }
 
@@ -104,78 +109,40 @@ img {
 }
 
 .glide__slide {
+
+    @media only screen and(min-width: $tablet-media-query) {
+        &:nth-of-type(2n) {
+            margin-top: 3.5rem;
+        }
+    }
+
     &--type {
         font-size: 1.4rem;
         line-height: 2.6rem;
-        color: $color-tertiary;
+        color: var(--color-tertiary);
         display: block;
     }
 
     &__heading {
         & h2 {
-            color: $color-tertiary;
+            color: var(--color-tertiary);
             display: inline-block;
             margin-bottom: 2rem;
             font-size: 4.4rem;
             font-weight: 400;
-            line-height: 1.4;
+            line-height: 3.7rem;
         }
     }
 }
 
-@keyframes load {
-    0% {
-        width: 0%;
+#not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    & .heading,
+    & .text {
+        margin-bottom: 3.5rem;
     }
-
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes anim-bg {
-    from {
-      opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-    }
-}
-
-.hero .grid .grid__item--1,
-.hero .grid .grid__item--2,
-.hero .grid .grid__item--3,
-.hero .grid .grid__item--4,
-.hero .grid .grid__item--5 {
-    transition: all 1s cubic-bezier(0.6, 0, 1, 1);
-}
-
-.hero .grid .grid__item--2 {
-    transition-delay: .5s;
-}
-
-.hero .grid .grid__item--5 {
-    transition-delay: 1s;
-}
-
-.hero .grid .grid__item--3,
-.hero .grid .grid__item--4 {
-    transition-delay: 1.3s;
-}
-
-.hero .grid .grid__item--1.hidden,
-.hero .grid .grid__item--2.hidden {
-    opacity: 0;
-    transform: translate3d(0%, 50%, 0%);
-}
-
-.hero .grid .grid__item--5.hidden {
-    opacity: 0;
-    transform: translate3d(0%, 20%, 0%);
-}
-
-.hero .grid .grid__item--3.hidden,
-.hero .grid .grid__item--4.hidden {
-    opacity: 0;
 }

@@ -1,32 +1,10 @@
 import style from '../css/style.css';
+import smoothScroll from '../js/smooth-scroll.js';
+import workShowcase from '../js/work-showcase.js';
 import component from '../js/component.js';
 import insertFooter from '../js/footer.js';
-import work from '../js/work-showcase.js';
-import slider from '../js/slider.js';
 
-//insertHeader();
-insertFooter();
-work();
+smoothScroll();
+workShowcase();
 component();
-slider();
-
-document.addEventListener('wheel', function(event) {
-    //only vertical scroll
-    if (event.deltaY > 0) {
-        // event.preventDefault();
-        smoothScroll(document.documentElement, 100, 1000)
-    }
-})
-
-function smoothScroll(domElement, pixel, delay) {
-    let intervalToRepeat = 25;
-    let step = (intervalToRepeat * pixel) / delay;
-    if (step < pixel) {
-        domElement.scrollTop += step;
-        setTimeout(function () {
-            smoothScroll(domElement, pixel - step, delay)
-        }, intervalToRepeat);
-    }
-
-
-}
+insertFooter();

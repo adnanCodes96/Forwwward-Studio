@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 a {
@@ -14,7 +14,7 @@ a {
 
 .logo {
     &--text {
-        color: $color-tertiary;
+        color: var(--color-tertiary);
         font-size: 2.4rem;
     }
 }
@@ -23,7 +23,7 @@ a {
     font-weight: 400;
 
     &--primary {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 4.8rem;
         line-height: 5.2rem;
 
@@ -39,7 +39,7 @@ a {
     }
 
     &--secondary {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 3.2rem;
         line-height: 3.5rem;
 
@@ -50,7 +50,7 @@ a {
     }
 
     &--tertiary {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 2.6rem;
         line-height: 2.8rem;
 
@@ -61,7 +61,7 @@ a {
     }
 
     &--quaternary {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 2rem;
         line-height: 2.2rem;
         margin-bottom: 2rem;
@@ -73,28 +73,28 @@ a {
     }
 
     &--quinary {
-        color: $color-octonary;
+        color: var(--color-octonary);
         font-size: 1.8rem;
         line-height: 2.3rem;
         margin-bottom: .5rem;
     }
 
     &--24 {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 2.4rem;
         line-height: 4.8rem;
         margin-bottom: .8rem;
     }
 
     &--centered-slider {
-        color: $ccolor-black;
+        color: var(--color-primary);
         font-size: 2.5rem;
         line-height: 4.6rem;
         padding: 4rem 0rem;
     }
 
     &--footer {
-        color: $color-octonary;
+        color: var(--color-octonary);
         font-size: 1.6rem;
         font-weight: 18rem;
         margin-bottom: 2rem;
@@ -111,7 +111,7 @@ a {
             left: 0%;
             height: .1rem;
             width: 100%;
-            background-color: $color-octonary;
+            background-color: var(--color-octonary);
         }
     }
 }
@@ -119,7 +119,7 @@ a {
 .hero {
     &__prev,
     &__next {
-        color: $color-tertiary;
+        color: var(--color-tertiary);
         font-size: 1.5rem;
     }
 }
@@ -141,7 +141,7 @@ a {
             transform: translateY(-50%);
             height: .3rem;
             width: 1rem;
-            background-color: $color-secondary;
+            background-color: var(--color-secondary);
 
             @media only screen and(min-width: $tablet-media-query) {
                 display: none;
@@ -160,13 +160,13 @@ a {
 
 .text {
     &--primary {
-        color: $color-tertiary;
+        color: var(--color-tertiary);
         font-size: 1.6rem;
         line-height: 1.7rem;
 
         &-light {
             @extend .text--primary;
-            color: $color-quaternary;
+            color: var(--color-quaternary);
         }
 
         @media only screen and(min-width: $tablet-media-query) {
@@ -176,43 +176,43 @@ a {
     }
 
     &--secondary {
-        color: $color-quaternary;
+        color: var(--color-quaternary);
         font-size: 1.6rem;
         line-height: 2.5rem;
 
         & span {
             @extend .text--secondary;
             display: inline-block;
-            color: $color-tertiary !important;
+            color: var(--color-tertiary) !important;
             text-transform: capitalize;
         }
 
         &--white {
             @extend .text--secondary;
-            color: $color-tertiary;
+            color: var(--color-tertiary);
         }
     }
 
     &--tertiary {
-        color: $color-quinary;
+        color: var(--color-quinary);
         font-size: 1.8rem;
         line-height: 2.3rem;
     }
 
     &--quaternary {
-        color: $color-quinary;
+        color: var(--color-quinary);
         font-size: 1.6rem;
         line-height: 2.2rem;
     }
 
     &--quinary {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 1.5rem;
         line-height: 2rem;
     }
 
     &--copy {
-        color: $color-quaternary;
+        color: var(--color-quaternary);
         font-size: 1.4rem;
         line-height: 1.6rem;
     }
@@ -221,7 +221,7 @@ a {
 ul {
     list-style: none;
     li {
-        color: $color-octonary;
+        color: var(--color-octonary);
         font-size: 1.8rem;
         line-height: 3.3rem;
     }
@@ -229,23 +229,23 @@ ul {
 
 .cta {
     font-size: 1.6rem;
-    color: $color-secondary;
+    color: var(--color-secondary);
     text-align: center;
 
     &--light {
         @extend .cta;
-        color: $color-primary;
+        color: var(--color-primary);
     }
 
     &--underline {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 1.5rem;
         line-height: 3.3rem;
     }
 }
 
 .email {
-    color: $color-tertiary;
+    color: var(--color-tertiary);
     font-size: 1.3rem;
     line-height: 1.8rem;
 }
@@ -263,7 +263,7 @@ ul {
                 left: 0%;
                 height: .1rem;
                 width: 10%;
-                background-color: $color-octonary;
+                background-color: var(--color-octonary);
             }
         }
     }
@@ -288,13 +288,13 @@ ul {
 input[type="text"],
 input[type="email"],
 textarea {
-    color: $color-secondary;
+    color: var(--color-secondary);
 }
 
 .footer {
     &--link {
         display: inline-block;
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-size: 1.8rem;
         line-height: 3.3rem;
         position: relative;
@@ -308,7 +308,7 @@ textarea {
             left: 0%;
             height: .1rem;
             width: 0%;
-            background-color: $color-secondary;
+            background-color: var(--color-secondary);
             transition: .3s ease;
         }
 
@@ -320,20 +320,20 @@ textarea {
     }
 
     &--copy {
-        color: $color-quaternary;
+        color: var(--color-quaternary);
         font-size: 1.6rem;
         line-height: 1.8rem;
     }
 
     &--privacy {
-        color: $color-quaternary;
+        color: var(--color-quaternary);
         font-size: 1.4rem;
         line-height: 2.6rem;
         display: flex;
 
         & span {
             display: inline-block;
-            color: $color-tertiary;
+            color: var(--color-tertiary);
             margin-left: 1rem;
         }
     }

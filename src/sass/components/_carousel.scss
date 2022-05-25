@@ -25,7 +25,7 @@
     position: relative;
     height: .4rem;
     width: 100%;
-    background-color: $color-octonary;
+    background-color: var(--color-octonary);
     margin: 0rem 2rem;
 
     &--1 {
@@ -91,7 +91,7 @@
         left: 0%;
         height: .4rem;
         width: 33.3%;
-        background-color: $color-tertiary;
+        background-color: var(--color-tertiary);
         transition: all .25s ease;
 
         &--work {
@@ -105,6 +105,10 @@
     @media only screen and(min-width: $tablet-media-query) {
         width: calc(100% - 13rem) !important;
         margin: 0% auto;
+    }
+
+    @media only screen and(min-width: $small-screen-query) {
+        width: 100% !important;
     }
 }
 
@@ -130,21 +134,40 @@
     }
 
     &__item {
-        background-color: $color-secondary;
+        background-color: var(--color-tertiary);
         padding: 2.5rem 1rem;
         height: 33.5rem;
         width: 29.4rem;
         position: relative;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: var(--color-octonary);
+        }
 
         @media only screen and(min-width: $tablet-media-query) {
             width: 23%;
             height: auto;
         }
-    }
 
-    &__arrow {
-        position: absolute;
-        bottom: 2.5rem;
-        right: 1rem;
+        & .social-media-icon {
+            height: 3.5rem;
+            width: 3.5rem;
+
+        }
+
+        & .heading {
+            margin-bottom: 5rem;
+        }
+
+        & .arrow {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            height: auto;
+            width: 5rem;
+            fill: var(--color-quaternary);
+            transform: scale(0.4);
+        }
     }
 }

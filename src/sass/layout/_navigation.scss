@@ -6,7 +6,7 @@
     }
 
     &__line {
-        background-color: $color-tertiary;
+        background-color: var(--color-tertiary);
         height: .2rem;
         width: 100%;
 
@@ -25,12 +25,22 @@
     height: 100%;
     width: 100%;
     z-index: 1000;
-    background-color: $color-primary;
-    display: none;
+    background-color: var(--color-primary);
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all .5s ease;
+    overflow: hidden;
+
+    &--open {
+        transform: translateY(0%);
+        transition: all .5s ease;
+        visibility: visible;
+    }
 
     @media only screen and (min-width: $tablet-media-query) {
         position: relative;
@@ -39,24 +49,29 @@
         display: flex;
         flex-direction: row;
         background-color: transparent;
+        visibility: visible;
+        transform: translateY(0%);
     }
 
 
     & ul {
+        padding-top: 6rem;
         @media only screen and (min-width: $tablet-media-query) {
+            padding-top: 0rem;
             display: flex;
         }
     }
 
     & li {
-        margin-bottom: 5rem;
         overflow: hidden;
+        &:not(:last-child) {
+            margin-bottom: 5.5rem;
+        }
 
         @media only screen and (min-width: $tablet-media-query) {
-            margin-bottom: 0rem;
             position: relative;
-
             &:not(:last-child) {
+                margin-bottom: 0rem;
                 margin-right: 5rem;
             }
         }
@@ -66,7 +81,7 @@
         position: relative;
         padding-bottom: .3rem;
         user-select: none;
-        color: $color-secondary;
+        color: var(--color-link);
         font-size: 3.2rem;
         line-height: 3.5rem;
 
@@ -83,7 +98,7 @@
             transform: translateX(-110%);
             height: .1rem;
             width: 100%;
-            background-color: $color-tertiary;
+            background-color: var(--color-tertiary);
             transition: all .3s ease;
         }
 
@@ -94,7 +109,7 @@
     }
 
     & .active-page {
-        color: $color-octonary;
+        color: var(--color-octonary);
         pointer-events: none;
     }
 
@@ -108,18 +123,12 @@
         }
     }
 
-    & .logo-main {
-        position: relative;
+    & .logo {
+        height: 25rem;
+        width: 25rem;
 
-        @media only screen and (min-width: $tablet-media-query) {
+        @media only screen and(min-width: $tablet-media-query) {
             display: none;
-        }
-
-        & .arrow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(.4);
         }
     }
 

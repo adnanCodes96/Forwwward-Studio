@@ -8,55 +8,6 @@
         display: flex;
         align-items: center;
     }
-
-    & .gradient__parent {
-        position: absolute;
-        top: -5%;
-        left: -5%;
-        z-index: -1;
-        height: 50rem;
-        width: 50rem;
-        transform: rotate(345deg);
-
-        & .gradient--1 {
-            position: absolute;
-            top: 0%;
-            left: -5%;
-            right: initial;
-            background-color: #6E2D96;
-            height: 50%;
-            width: 50%;
-            border-radius: 50%;
-            filter: blur(5rem);
-            opacity: 0.8;
-        }
-
-        & .gradient--2 {
-            position: absolute;
-            top: 17%;
-            left: -22%;
-            right: initial;
-            background-color: #EBA1C0;
-            height: 50%;
-            width: 50%;
-            border-radius: 50%;
-            filter: blur(5rem);
-            opacity: 0.8;
-        }
-
-        & .gradient--3 {
-            position: absolute;
-            top: 23%;
-            left: 0%;
-            right: initial;
-            background-color: #CFA1F3;
-            height: 50%;
-            width: 50%;
-            border-radius: 50%;
-            filter: blur(5rem);
-            opacity: 0.8;
-        }
-    }
 }
 
 .digital-product-studio {
@@ -68,16 +19,17 @@
 }
 
 .card {
-    background-color: $color-tertiary;
+    background-color: var(--color-tertiary);
     padding: 3rem;
 
     &--gray {
         @extend .card;
-        background-color: $color-secondary;
+        background-color: transparent !important;
 
         & .post-count-position {
             display: inline-block;
             margin-bottom: 3rem;
+            color: var(--color-tertiary);
         }
 
         @media only screen and(min-width: $tablet-media-query) {
@@ -132,7 +84,7 @@
     &-slider {
         display: none;
         @media only screen and(min-width: $tablet-media-query) {
-            // background-color: $color-secondary;
+            // background-color: var(--color-secondary);
             display: block;
         }
     }

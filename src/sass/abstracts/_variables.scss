@@ -1,19 +1,107 @@
 // Colors
-$color-primary: #191919;
-$color-secondary: #F1F1F1;
-$color-tertiary: #FFF;
-$color-quaternary: #A1A1A1;
-$color-quinary: #808285;
-$color-senary: #F2F2F2;
-$color-septenary: #333;
-$color-octonary: #92A5A9;
-$ccolor-black: #000;
+:root {
+    --color-primary: #191919;
+    --color-secondary: #F1F1F1;
+    --color-tertiary: #FFF;
+    --color-quaternary: #A1A1A1;
+    --color-quinary: #808285;
+    --color-senary: #F2F2F2;
+    --color-septenary: #333;
+    --color-octonary: #92A5A9;
+    --color-header: #191919;
+    --color-link: #F1F1F1;
+}
+
+body.light-theme {
+    background-color: var(--color-secondary);
+    transition: background-color 1s ease;
+}
+
+.light-theme {
+    @include transition;
+    & .heading {
+        color: var(--color-primary);
+
+        &--quinary {
+            color: var(--color-octonary);
+        }
+    }
+
+    & .glide {
+        &__slide {
+            &--type {
+                color: var(--color-primary);
+            }
+
+            &__heading h2 {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    & .button {
+        &--link {
+            background-color: var(--color-primary);
+            color: var(--color-tertiary);
+
+            &:hover {
+                color: var(--color-tertiary);
+            }
+        }
+    }
+
+    & .card {
+        & .post-count-position {
+            color: var(--color-primary);
+        }
+    }
+
+    & .btn {
+        & span {
+            color: var(--color-primary);
+        }
+
+        & .circle {
+            border: 0.1rem solid var(--color-primary);
+        }
+    }
+
+    & .what-we-do {
+        & li {
+            color: var(--color-primary);
+        }
+    }
+
+    & .circle {
+        display: inline-block;
+        position: relative;
+        height: 6.5rem;
+        width: 6.5rem;
+        border-radius: 50%;
+        border: .1rem solid var(--color-primary);
+        @include transition;
+
+        & .arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.4);
+            width: 100%;
+            height: auto;
+            fill: var(--color-primary);
+            @include transition;
+        }
+
+        &:hover {
+            background-color: var(--color-primary);
+
+            & .arrow {
+                fill: var(--color-secondary)
+            }
+        }
+    }
+}
 
 // Media queries
 $tablet-media-query: 768px;
 $small-screen-query: 1024px;
-
-.light--mode {
-    background-color: $color-secondary;
-    transition: all .5s cubic-bezier(0.23, 1, 0.320, 1);
-}
