@@ -106,3 +106,97 @@
     opacity: 0;
     transform: translate3d(0%, 50%, 0%);
 }
+
+@keyframes gradient-1-scaleUp {
+    from {
+        height: 0em;
+        width: 0em;
+    } to {
+        height: 40em;
+        width: 40em;
+    }
+}
+
+@keyframes gradient-2-scaleUp {
+    from {
+        height: 0em;
+        width: 0em;
+    } to {
+        height: 20em;
+        width: 20em;
+    }
+}
+
+@keyframes gradient-3-scaleUp {
+    from {
+        height: 0em;
+        width: 0em;
+    } to {
+        height: 10em;
+        width: 10em;
+    }
+}
+
+@keyframes gradient-4-scaleUp {
+    from {
+        height: 0em;
+        width: 0em;
+    } to {
+        height: 20em;
+        width: 20em;
+    }
+}
+
+@keyframes gradient-5-scaleUp {
+    from {
+        height: 0em;
+        width: 0em;
+    } to {
+        height: 25em;
+        width: 25em;
+    }
+}
+
+@keyframes gradient-6-scaleUp {
+    from {
+        height: 0em;
+        width: 0em;
+    } to {
+        height: 15em;
+        width: 15em;
+    }
+}
+
+@media only screen and(min-width: $tablet-media-query) {
+    @keyframes gradient-1-scaleUp {
+        from {
+            height: 0em;
+            width: 0em;
+        } to {
+            height: 80em;
+            width: 80em;
+        }
+    }
+
+
+    @keyframes gradient-2-scaleUp {
+        from {
+            height: 0em;
+            width: 0em;
+        } to {
+            height: 25em;
+            width: 25em;
+        }
+    }
+
+    @keyframes gradient-3-scaleUp {
+        from {
+            height: 0em;
+            width: 0em;
+        } to {
+            height: 30em;
+            width: 30em;
+        }
+    }
+      
+}

@@ -2,6 +2,15 @@
     transition: all 1s ease;
 }
 
+@mixin normal-transition {
+    transition: all .5s ease;
+}
+
+
+@mixin fast-transition {
+    transition: all .3s ease;
+}
+
 @mixin spin {
     animation: 15s spin linear infinite;
 }

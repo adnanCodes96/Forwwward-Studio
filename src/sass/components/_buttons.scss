@@ -2,8 +2,8 @@
     display: none;
 
     @media only screen and(min-width: $tablet-media-query) {
-        background-color: var(--color-link);
-        color: var(--color-header);
+        background-color: var(--color-tertiary);
+        color: var(--color-primary);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -12,8 +12,8 @@
         border-radius: .5rem;
         font-size: 1.5rem;
         line-height: 2rem;
-        transition: all .3s;
         user-select: none;
+        @include fast-transition;
 
         &:hover {
             background-color: var(--color-octonary);
@@ -38,8 +38,8 @@
         height: 7rem;
         width: 7rem;
         border-radius: 50%;
-        transition: .3s ease;
         text-align: center;
+        @include fast-transition;
 
         &:hover {
             background-color: var(--color-octonary);
@@ -70,7 +70,7 @@
         font-size: 1.8rem;
         line-height: 1.5rem;
         margin-right: 2rem;
-        @include transition; // need faster transition 
+        @include fast-transition;
     }
 
     &:hover {
@@ -81,9 +81,9 @@
         & .circle {
             background-color: var(--color-primary);
 
-        & .arrow {
-            fill: var(--color-tertiary);
-        }
+            & .arrow {
+                fill: var(--color-tertiary);
+            }
         }
     }
 }
@@ -127,7 +127,7 @@ input[type="submit"] {
     margin: 2rem auto 0rem auto;
 
     @media only screen and(min-width: $tablet-media-query) {
-        transition: all .3s ease;
+        @include fast-transition;
 
         &:hover {
             background-color: var(--color-octonary);
@@ -143,8 +143,8 @@ input[type="submit"] {
     height: 6.5rem;
     width: 6.5rem;
     border-radius: 50%;
-    border: .1rem solid var(--color-secondary);
-    @include transition;
+    border: .1rem solid var(--color-tertiary);
+    @include fast-transition;
 
     & .arrow {
         position: absolute;
@@ -154,7 +154,7 @@ input[type="submit"] {
         width: 100%;
         height: auto;
         fill: var(--color-tertiary);
-        @include transition;
+        @include fast-transition;
 
         &--down {
             transform: translate(-50%, -50%) scale(0.4) rotate(90deg);
@@ -162,10 +162,10 @@ input[type="submit"] {
     }
 
     &:hover {
-        background-color: var(--color-secondary);
+        background-color: var(--color-tertiary) !important;
 
         & .arrow {
-            fill: var(--color-primary);
+            fill: var(--color-primary) !important;
         }
     }
 }

@@ -6,7 +6,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
 
     entry: {
         main: path.resolve(__dirname, 'src/js/index.js'),
@@ -20,14 +20,20 @@ module.exports = {
     },
 
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /.s?css$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
 
-            // images
-            {test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/, type: 'asset/resource'}
+            {
+                test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/,
+                type: 'asset/resource',
+            },
+
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            }
         ],
     },
 
@@ -48,6 +54,10 @@ module.exports = {
         hot: true,
     },
 
+    performance: {
+        hints: false
+    },
+
     plugins: [
         new MiniCssExtractPlugin(),
 
@@ -63,19 +73,58 @@ module.exports = {
             template: path.resolve(__dirname, 'src/index.html'),
             scriptLoading: 'defer',
             meta: {
-                'author': {name: 'author', content: 'Adnan Musinovic'},
-                'description': {name: 'description', content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'},
-                'keyword': {name: 'keywords', content: 'Forwwward Studio, Web Design, Web Development, Marketing'},
-                'og:title': { property: 'og:title', content: 'Forwwward Studio - Digital Product Studio'},
-                'og:description': { property: 'og:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'og:type': { property: 'og:type', content: 'website' },
-                'og:url': { property: 'og:url', content: 'https://forward-studio.000webhostapp.com/index.html' },
-                'og:image': { property: 'og:image', content: '../src/images/facebook-share-img.png' },
-                'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
-                'twitter:title': { name: 'twitter:title', content: 'Forwwward Studio - Digital Product Studio' },
-                'twitter:description': { name: 'twitter:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'twitter:image': { name: 'twitter:image', content: '../src/images/twitter-share-img.png' },
-                'theme-color': {name: 'theme-color', content: '#191919'}
+                'author': {
+                    name: 'author',
+                    content: 'Adnan Musinovic'
+                },
+                'description': {
+                    name: 'description',
+                    content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'keyword': {
+                    name: 'keywords',
+                    content: 'Forwwward Studio, Web Design, Web Development, Marketing'
+                },
+                'og:title': {
+                    property: 'og:title',
+                    content: 'Forwwward Studio - Digital Product Studio'
+                },
+                'og:description': {
+                    property: 'og:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'og:type': {
+                    property: 'og:type',
+                    content: 'website'
+                },
+                'og:url': {
+                    property: 'og:url',
+                    content: 'https://forward-studio.000webhostapp.com/index.html'
+                },
+                'og:image': {
+                    property: 'og:image',
+                    content: '../src/images/facebook-share-img.png'
+                },
+                'twitter:card': {
+                    name: 'twitter:card',
+                    content: 'summary_large_image'
+                },
+                'twitter:title': {
+                    name: 'twitter:title',
+                    content: 'Forwwward Studio - Digital Product Studio'
+                },
+                'twitter:description': {
+                    name: 'twitter:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'twitter:image': {
+                    name: 'twitter:image',
+                    content: '../src/images/twitter-share-img.png'
+                },
+                'meta': {
+                    name: 'theme-color',
+                    content: '#191919'
+                }
             }
         }),
         new HtmlWebpackPlugin({
@@ -84,19 +133,58 @@ module.exports = {
             template: path.resolve(__dirname, 'src/work.html'),
             scriptLoading: 'defer',
             meta: {
-                'author': {name: 'author', content: 'Adnan Musinovic'},
-                'description': {name: 'description', content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'},
-                'keyword': {name: 'keywords', content: 'Forwwward Studio, Web Design, Web Development, Marketing'},
-                'og:title': { property: 'og:title', content: 'Work - Forwwward Studio'},
-                'og:description': { property: 'og:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'og:type': { property: 'og:type', content: 'website' },
-                'og:url': { property: 'og:url', content: 'https://forward-studio.000webhostapp.com/work.html' },
-                'og:image': { property: 'og:image', content: '../src/images/facebook-share-img.png' },
-                'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
-                'twitter:title': { name: 'twitter:title', content: 'Work - Forwwward Studio' },
-                'twitter:description': { name: 'twitter:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'twitter:image': { name: 'twitter:image', content: 'src/images/twitter-share-img.png' },
-                'theme-color': {name: 'theme-color', content: '#191919'}
+                'author': {
+                    name: 'author',
+                    content: 'Adnan Musinovic'
+                },
+                'description': {
+                    name: 'description',
+                    content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'keyword': {
+                    name: 'keywords',
+                    content: 'Forwwward Studio, Web Design, Web Development, Marketing'
+                },
+                'og:title': {
+                    property: 'og:title',
+                    content: 'Work - Forwwward Studio'
+                },
+                'og:description': {
+                    property: 'og:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'og:type': {
+                    property: 'og:type',
+                    content: 'website'
+                },
+                'og:url': {
+                    property: 'og:url',
+                    content: 'https://forward-studio.000webhostapp.com/work.html'
+                },
+                'og:image': {
+                    property: 'og:image',
+                    content: '../src/images/facebook-share-img.png'
+                },
+                'twitter:card': {
+                    name: 'twitter:card',
+                    content: 'summary_large_image'
+                },
+                'twitter:title': {
+                    name: 'twitter:title',
+                    content: 'Work - Forwwward Studio'
+                },
+                'twitter:description': {
+                    name: 'twitter:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'twitter:image': {
+                    name: 'twitter:image',
+                    content: 'src/images/twitter-share-img.png'
+                },
+                'meta': {
+                    name: 'theme-color',
+                    content: '#191919'
+                }
             }
         }),
         new HtmlWebpackPlugin({
@@ -105,19 +193,58 @@ module.exports = {
             template: path.resolve(__dirname, 'src/studio.html'),
             scriptLoading: 'defer',
             meta: {
-                'author': {name: 'author', content: 'Adnan Musinovic'},
-                'description': {name: 'description', content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'},
-                'keyword': {name: 'keywords', content: 'Forwwward Studio, Web Design, Web Development, Marketing'},
-                'og:title': { property: 'og:title', content: 'Studio - Forwwward Studio'},
-                'og:description': { property: 'og:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'og:type': { property: 'og:type', content: 'website' },
-                'og:url': { property: 'og:url', content: 'https://forward-studio.000webhostapp.com/studio.html' },
-                'og:image': { property: 'og:image', content: '../src/images/facebook-share-img.png' },
-                'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
-                'twitter:title': { name: 'twitter:title', content: 'Studio - Forwwward Studio' },
-                'twitter:description': { name: 'twitter:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'twitter:image': { name: 'twitter:image', content: '../src/images/twitter-share-img.png' },
-                'theme-color': {name: 'theme-color', content: '#191919'}
+                'author': {
+                    name: 'author',
+                    content: 'Adnan Musinovic'
+                },
+                'description': {
+                    name: 'description',
+                    content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'keyword': {
+                    name: 'keywords',
+                    content: 'Forwwward Studio, Web Design, Web Development, Marketing'
+                },
+                'og:title': {
+                    property: 'og:title',
+                    content: 'Studio - Forwwward Studio'
+                },
+                'og:description': {
+                    property: 'og:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'og:type': {
+                    property: 'og:type',
+                    content: 'website'
+                },
+                'og:url': {
+                    property: 'og:url',
+                    content: 'https://forward-studio.000webhostapp.com/studio.html'
+                },
+                'og:image': {
+                    property: 'og:image',
+                    content: '../src/images/facebook-share-img.png'
+                },
+                'twitter:card': {
+                    name: 'twitter:card',
+                    content: 'summary_large_image'
+                },
+                'twitter:title': {
+                    name: 'twitter:title',
+                    content: 'Studio - Forwwward Studio'
+                },
+                'twitter:description': {
+                    name: 'twitter:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'twitter:image': {
+                    name: 'twitter:image',
+                    content: '../src/images/twitter-share-img.png'
+                },
+                'meta': {
+                    name: 'theme-color',
+                    content: '#191919'
+                }
             }
         }),
         new HtmlWebpackPlugin({
@@ -126,25 +253,70 @@ module.exports = {
             template: path.resolve(__dirname, 'src/contact.html'),
             scriptLoading: 'defer',
             meta: {
-                'author': {name: 'author', content: 'Adnan Musinovic'},
-                'description': {name: 'description', content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'},
-                'keyword': {name: 'keywords', content: 'Forwwward Studio, Web Design, Web Development, Marketing'},
-                'og:title': { property: 'og:title', content: 'Contact - Forwwward Studio'},
-                'og:description': { property: 'og:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'og:type': { property: 'og:type', content: 'website' },
-                'og:url': { property: 'og:url', content: 'https://forward-studio.000webhostapp.com/contact.html' },
-                'og:image': { property: 'og:image', content: '../src/images/facebook-share-img.png' },
-                'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
-                'twitter:title': { name: 'twitter:title', content: 'Contact - Forwwward Studio' },
-                'twitter:description': { name: 'twitter:description', content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.' },
-                'twitter:image': { name: 'twitter:image', content: '../src/images/twitter-share-img.png' },
-                'theme-color': {name: 'theme-color', content: '#191919'}
+                'author': {
+                    name: 'author',
+                    content: 'Adnan Musinovic'
+                },
+                'description': {
+                    name: 'description',
+                    content: 'We partner with tech companies & startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'keyword': {
+                    name: 'keywords',
+                    content: 'Forwwward Studio, Web Design, Web Development, Marketing'
+                },
+                'og:title': {
+                    property: 'og:title',
+                    content: 'Contact - Forwwward Studio'
+                },
+                'og:description': {
+                    property: 'og:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'og:type': {
+                    property: 'og:type',
+                    content: 'website'
+                },
+                'og:url': {
+                    property: 'og:url',
+                    content: 'https://forward-studio.000webhostapp.com/contact.html'
+                },
+                'og:image': {
+                    property: 'og:image',
+                    content: '../src/images/facebook-share-img.png'
+                },
+                'twitter:card': {
+                    name: 'twitter:card',
+                    content: 'summary_large_image'
+                },
+                'twitter:title': {
+                    name: 'twitter:title',
+                    content: 'Contact - Forwwward Studio'
+                },
+                'twitter:description': {
+                    name: 'twitter:description',
+                    content: 'We partner with tech companies &amp; startups to craft remarkable products and brands that impact and inspire.'
+                },
+                'twitter:image': {
+                    name: 'twitter:image',
+                    content: '../src/images/twitter-share-img.png'
+                },
+                'meta': {
+                    name: 'theme-color',
+                    content: '#191919'
+                }
             }
         }),
         new HtmlWebpackPlugin({
             title: 'Page not found - Forwwward Studio',
             filename: 'not-found.html',
-            template: path.resolve(__dirname, 'src/not-found.html')
+            template: path.resolve(__dirname, 'src/not-found.html'),
+            meta: {
+                'meta': {
+                    name: 'theme-color',
+                    content: '#191919'
+                }
+            }
         })
     ]
 }

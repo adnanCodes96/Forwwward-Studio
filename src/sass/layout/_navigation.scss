@@ -33,13 +33,22 @@
     text-align: center;
     visibility: hidden;
     transform: translateY(-100%);
-    transition: all .5s ease;
+    opacity: 0;
+    @include normal-transition;
     overflow: hidden;
 
     &--open {
         transform: translateY(0%);
-        transition: all .5s ease;
+        @include normal-transition;
         visibility: visible;
+        opacity: 1;
+
+        & ul,
+        & .logo,
+        & .copy {
+            opacity: 1 !important;
+            transform: translateY(0%) !important;
+        }
     }
 
     @media only screen and (min-width: $tablet-media-query) {
@@ -51,14 +60,22 @@
         background-color: transparent;
         visibility: visible;
         transform: translateY(0%);
+        opacity: 1;
     }
 
 
     & ul {
         padding-top: 6rem;
+        opacity: 0;
+        transform: translateY(10%);
+        @include normal-transition;
+        transition-delay: .5s;
+
         @media only screen and (min-width: $tablet-media-query) {
             padding-top: 0rem;
             display: flex;
+            opacity: 1 !important;
+            transform: translateY(0%) !important;
         }
     }
 
@@ -81,7 +98,7 @@
         position: relative;
         padding-bottom: .3rem;
         user-select: none;
-        color: var(--color-link);
+        color: var(--color-tertiary);
         font-size: 3.2rem;
         line-height: 3.5rem;
 
@@ -126,16 +143,33 @@
     & .logo {
         height: 25rem;
         width: 25rem;
+        opacity: 0;
+        transform: translateY(10%);
+        @include normal-transition;
+        transition-delay: .7s;
 
         @media only screen and(min-width: $tablet-media-query) {
             display: none;
         }
     }
 
-    & .copy p {
-        margin-bottom: 2rem;
+    & .copy {
+        opacity: 0;
+        transform: translateY(5%);
+        @include normal-transition;
+        transition-delay: 1s;
 
         @media only screen and (min-width: $tablet-media-query) {
+            display: none;
+        }
+
+        & p {
+            margin-bottom: 2rem;
+        }
+    }
+
+    & .gradient__container {
+        @media only screen and(min-width: $tablet-media-query) {
             display: none;
         }
     }

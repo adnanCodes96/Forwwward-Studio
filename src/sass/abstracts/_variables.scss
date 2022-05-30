@@ -8,17 +8,15 @@
     --color-senary: #F2F2F2;
     --color-septenary: #333;
     --color-octonary: #92A5A9;
-    --color-header: #191919;
-    --color-link: #F1F1F1;
 }
 
 body.light-theme {
     background-color: var(--color-secondary);
-    transition: background-color 1s ease;
+    @include fast-transition;
 }
 
 .light-theme {
-    @include transition;
+    @include fast-transition;
     & .heading {
         color: var(--color-primary);
 
@@ -73,30 +71,17 @@ body.light-theme {
     }
 
     & .circle {
-        display: inline-block;
-        position: relative;
-        height: 6.5rem;
-        width: 6.5rem;
-        border-radius: 50%;
         border: .1rem solid var(--color-primary);
-        @include transition;
 
         & .arrow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.4);
-            width: 100%;
-            height: auto;
             fill: var(--color-primary);
-            @include transition;
         }
 
         &:hover {
-            background-color: var(--color-primary);
+            background-color: var(--color-primary) !important;
 
             & .arrow {
-                fill: var(--color-secondary)
+                fill: var(--color-secondary) !important;
             }
         }
     }

@@ -8,7 +8,7 @@ import MindOnly from '../images/hero/mind-only.jpg';
 import ArieStudioSwimmwear from '../images/hero/areia-studio-swimwear.jpg';
 import AlterVenturePArtners from '../images/hero/alter-venture-partners.jpg';
 import Briefar from '../images/hero/briefar.jpg';
-import ProductIdeaImg from '../images/hero/our-process.png';
+import ProductIdeaImg from '../images/hero/our-process.webp';
 import decentralizedStudioImage from '../images/hero/decentralized-banner.jpg';
 import WorkSlide1 from '../images/studio/work-1.jpg';
 import WorkSlide2 from '../images/studio/work-2.jpg';

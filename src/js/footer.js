@@ -4,6 +4,11 @@ function insertFooter() {
         if (x.matches) {
             const footerSM = `
                     <footer class="footer footer--sm">
+                        <div class="gradient__container">
+                            <div class="gradient gradient-color-1"></div>
+                            <div class="gradient gradient-color-2"></div>
+                            <div class="gradient gradient-color-3"></div>
+                        </div>
                         <div class="grid">
                             <div class="grid__item grid__item--1">
                                 <div class="logo">
@@ -24,7 +29,7 @@ function insertFooter() {
                         </div>
                     </footer>`;
 
-            if(document.body.id !== 'contact') {
+            if (document.body.id !== 'contact') {
                 document.body.insertAdjacentHTML('beforeend', footerSM);
 
                 const footerLg = document.querySelector('.footer--lg');
@@ -32,12 +37,17 @@ function insertFooter() {
                 if (typeof (footerLg) != "undefined" && footerLg != null) {
                     footerLg.remove();
                 }
-                
+
             }
 
         } else {
             const footerLG = `
                         <footer class="footer footer--lg">
+                            <div class="gradient__container">
+                                <div class="gradient gradient-color-1"></div>
+                                <div class="gradient gradient-color-2"></div>
+                                <div class="gradient gradient-color-3"></div>
+                            </div>
                             <div class="grid">
                                 <div class="grid__item grid__item--1">
                                     <div class="logo">
@@ -91,7 +101,7 @@ function insertFooter() {
                             </div>
                         </footer>`;
 
-            if(document.body.id !== 'contact') {
+            if (document.body.id !== 'contact') {
                 document.body.insertAdjacentHTML('beforeend', footerLG);
 
                 const footerSm = document.querySelector('.footer--sm');

@@ -6,9 +6,11 @@
 
 html {
     -webkit-tap-highlight-color: transparent !important;
+    scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
 }
@@ -100,6 +102,7 @@ body {
 main {
     width: 100%;
     min-height: 100%;
+    overflow: hidden;
 }
 
 img {
@@ -144,5 +147,19 @@ img {
     & .heading,
     & .text {
         margin-bottom: 3.5rem;
+    }
+}
+
+.gradient {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(8rem);
+
+    &__container {
+        height: 500px;
+        width: 500px;
+        position: absolute;
+        z-index: -1;
     }
 }
